@@ -30,24 +30,24 @@ preprocess = transforms.Compose([
 ])
 
 # Pinecone 설정
-pinecone_key = "b3735e0a-9145-4822-84e0-ace768f646f2"
-pinecone_environment = "us-east-1"
-pinecone_index_name = "travelnuri"
+pinecone_key = ""
+pinecone_environment = ""
+pinecone_index_name = ""
 
 pc = Pinecone(api_key=pinecone_key, environment=pinecone_environment)   # Pinecone 인스턴스 생성
 index = pc.Index(pinecone_index_name)   # Pinecone 인덱스 초기화
 
 # Cosmos DB 설정
-cosmos_endpoint = "https://suheonchoi1.documents.azure.com:443/"  # Cosmos DB 엔드포인트 URL
-cosmos_key = "aMj7nXDrcGizt92gR0xeTeFkwI8yIkb7G5Fac2FaCl8dLgiU4HhVymZnLJUkFaxJXcJvnIbrE7BfACDb1BBTOQ=="  # Cosmos DB 액세스 키
-cosmos_database_name = "ImageDatabase"  # 사용할 Cosmos DB 데이터베이스 이름
-image_container_name = "ImageTable"  # 사용할 Cosmos DB 컨테이너 이름
+cosmos_endpoint = ""  # Cosmos DB 엔드포인트 URL
+cosmos_key = ""  # Cosmos DB 액세스 키
+cosmos_database_name = ""  # 사용할 Cosmos DB 데이터베이스 이름
+image_container_name = ""  # 사용할 Cosmos DB 컨테이너 이름
 
 # Blob Storage 설정
-connection_string = "DefaultEndpointsProtocol=https;AccountName=suheonchoi1;AccountKey=uZ10rRIn+q3cbHd04iimIZY38pcda1ePeyyDbe1YEG9WkCQsu+6WXj2EsOw3mwMzWP4MVfRwkejj+AStg0UJYg==;EndpointSuffix=core.windows.net"  # Azure Blob Storage 연결 문자열
+connection_string = ""  # Azure Blob Storage 연결 문자열
 blob_service_client = BlobServiceClient.from_connection_string(connection_string)  # Blob 서비스 클라이언트 생성
-blob_container_client = blob_service_client.get_container_client("image-container-travelnuri")  # Blob 컨테이너 클라이언트 생성
-blob_container_client2 = blob_service_client.get_container_client("embedding-container-travelnuri")  # Blob 컨테이너 클라이언트 생성
+blob_container_client = blob_service_client.get_container_client("")  # Blob 컨테이너 클라이언트 생성
+blob_container_client2 = blob_service_client.get_container_client("")  # Blob 컨테이너 클라이언트 생성
 
 # Okt 객체 생성
 okt = Okt()  # 한국어 명사 추출을 위한 Okt 객체 생성
